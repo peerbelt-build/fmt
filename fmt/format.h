@@ -366,7 +366,7 @@ namespace fmt {
 // Fix the warning about long long on older versions of GCC
 // that don't support the diagnostic pragma.
 FMT_GCC_EXTENSION typedef long long LongLong;
-FMT_GCC_EXTENSION typedef unsigned long long ULongLong;
+FMT_GCC_EXTENSION typedef uint64_t ULongLong;
 
 #if FMT_USE_RVALUE_REFERENCES
 using std::move;
@@ -1444,7 +1444,7 @@ class ArgVisitor {
     return FMT_DISPATCH(visit_any_int(value));
   }
 
-  /** Visits an ``unsigned long long`` argument. **/
+  /** Visits an ``uint64_t`` argument. **/
   Result visit_ulong_long(ULongLong value) {
     return FMT_DISPATCH(visit_any_int(value));
   }
